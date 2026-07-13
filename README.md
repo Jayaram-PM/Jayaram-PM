@@ -1,110 +1,78 @@
-# 👋 Hi, I'm K. Jayaram Swaroop Reddy
+# Hi, I'm Jayaram S 👋
 
-<div align="center">
+### Project | Program | Portfolio Management Professional  
+### Driving Strategic Execution, Business Transformation, and Technology Delivery
 
-### 🚀 Project & Program Management Professional | 10+ Years Experience  
-🌍 Open to Global Opportunities (Malaysia / India)  
-📌 Focused on IT Delivery • Risk Governance • Process Excellence • AI-Driven PM Insights
+I’m a Technical Project Manager with a Computer Science foundation and advanced academic training in Project Management. I specialize in bridging software engineering and business strategy to deliver measurable outcomes across complex, cross-functional initiatives.
 
-</div>
-
----
-
-## 🎯 Professional Snapshot
-
-✅ 10+ years of experience in **Project & Program Management**, **IT Operations**, **Product Delivery**, and **Risk & Compliance**  
-✅ Proven track record in driving **end-to-end project lifecycle execution**  
-✅ Experienced in leading cross-functional teams, improving workflows, and aligning execution with business goals  
-✅ Strong in **stakeholder communication**, **KPI/SLA governance**, and **continuous improvement**  
-✅ Recently completed **Master’s in Project Management (2025)** and actively pursuing advanced PM certifications
+I bring a structured, delivery-focused leadership style across PMO governance, Agile execution, risk management, and digital transformation programs.
 
 ---
 
-## 🧠 Core Expertise
+## 💼 Professional Summary
 
-<table>
-<tr>
-<td valign="top" width="50%">
+Technical Project Manager bridging the gap between software engineering and high-impact delivery.  
+With a background in Computer Science, an MSc in Project Management, PMP training, and Microsoft learning badges, I convert complex technical initiatives into business value.
 
-### 📌 Project Leadership
-- Project & Program Management  
-- Portfolio Management (PPM)  
-- Agile & Waterfall Delivery  
-- Resource Planning & Coordination  
-- Milestone & Timeline Tracking  
-
-</td>
-<td valign="top" width="50%">
-
-### 📌 Governance & Operations
-- Risk Management & Compliance  
-- Stakeholder & Client Management  
-- SLA / KPI Governance  
-- Process Optimization  
-- Performance Monitoring & Reporting  
-
-</td>
-</tr>
-</table>
+I’m passionate about:
+- Strategic execution
+- Business transformation
+- Governance and delivery excellence
+- Leading cross-functional teams
+- Building scalable, outcome-driven program structures
 
 ---
 
-## 🛠 Tools & Technologies
+## 🧠 Core Skills
 
-<div align="left">
-
-- **Project Tools:** JIRA, Trello  
-- **Reporting & Analysis:** MS Excel, Data Reporting Tools  
-- **Delivery Support:** Project Tracking & Performance Monitoring Tools  
-- **Methodologies:** Agile (Basic), Waterfall, Hybrid Delivery Approaches  
-
-</div>
-
----
-
-## 📈 Experience Highlights
-
-- Led and supported multiple high-impact initiatives across IT, operations, and risk functions  
-- Managed team operations, delivery workflows, and quality outcomes in dynamic environments  
-- Improved operational efficiency through structured process enhancement initiatives  
-- Delivered actionable analysis and reports for strategic decision-making  
-- Contributed to initiatives involving cybersecurity-focused product development and risk mitigation  
-- Recognized for service excellence in high-priority, high-risk process environments
+- Quality Management  
+- Risk Management  
+- Scrum  
+- PMO & Governance  
+- Agile Delivery  
+- Cross-Functional Leadership  
+- Digital Transformation  
 
 ---
 
-## 🎓 Education & Professional Development
+## 🎓 Education
 
-- 🎓 **Master’s in Project Management** (Completed: September 2025)  
-- 🎓 **B.E. in Computer Science**  
-- 🏅 **PMI Active Member (2025)**  
-- 📘 **PMP Certification — Pursuing**  
-- 📘 **Portfolio Management Certification — Pursuing**  
-- 🤖 **Generative AI Overview for Project Managers — Completed (PMI)**
+- **Master’s Degree in Project Management**  
+  *Asia Pacific University of Technology and Innovation (APU / APIIT)*  
+  2024 – 2025
 
----
-
-## 🌐 Languages
-
-🇬🇧 English | 🇮🇳 Hindi | తెలుగు Telugu | தமிழ் Tamil
+- **Computer Science**  
+  *Anna University, Chennai*
 
 ---
 
-## 💪 Strengths
+## 📜 Certifications
 
-`Leadership` • `Analytical Thinking` • `Problem Solving` • `Adaptability` • `Collaboration`
-
----
-
-## 🤝 Connect With Me
-
-- 📧 **Email:** Swaroopkjbe5@gmail.com  
-- 🔗 **LinkedIn:** *(Add your LinkedIn profile URL)*  
+- AI for Business Professionals  
+- PMP® Certification Training Course  
+- Lean Six Sigma White Belt Certification  
 
 ---
 
-<div align="center">
+## 🌍 Location
 
-### ✨ "Turning strategy into execution, and execution into measurable impact."
+**Malaysia**
 
-</div>
+---
+
+## 🤝 Let’s Connect
+
+- 📧 Email: **itsmeram1985@gmail.com**
+- 💼 LinkedIn: **[jayaramsreddy](https://www.linkedin.com/in/jayaramsreddy)**
+
+---
+
+## 🚀 Professional Focus
+
+I am currently focused on:
+- Delivering strategic programs with strong governance
+- Enabling digital and operational transformation
+- Improving portfolio visibility and execution maturity
+- Aligning technology initiatives to measurable business outcomes
+
+If you're looking to collaborate on high-impact delivery, PMO excellence, or transformation initiatives, let’s connect.
