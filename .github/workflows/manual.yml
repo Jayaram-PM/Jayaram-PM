@@ -1,32 +1,93 @@
-# This is a basic workflow that is manually triggered
+name: Profile Automation Agents
 
-name: Manual workflow
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on:
+  schedule:
+    - cron: "0 6 * * 1"
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: string
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-automation
+  cancel-in-progress: false
+
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
+  generate-assets:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate GitHub activity summary
+        run: |
+          python scripts/fetch_github_activity.py \
+            --username "${{ github.repository_owner }}" \
+            --output data/activity_summary.json \
+            --window-days 7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate profile README
+        run: |
+          python scripts/generate_readme.py \
+            --profile data/profile.json \
+            --activity data/activity_summary.json \
+            --output README.md
+
+      - name: Generate LinkedIn draft
+        run: |
+          python scripts/generate_linkedin_draft.py \
+            --profile data/profile.json \
+            --activity data/activity_summary.json \
+            --output linkedin_drafts/latest.md
+
+      - name: Validate generated outputs
+        run: |
+          python scripts/validate_outputs.py \
+            --readme README.md \
+            --linkedin-draft linkedin_drafts/latest.md
+
+      - name: Upload LinkedIn draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linkedin-draft
+          path: linkedin_drafts/latest.md
+          retention-days: 30
+
+      - name: Commit updated outputs
+        run: |
+          if git diff --quiet -- README.md data/activity_summary.json linkedin_drafts/latest.md; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md data/activity_summary.json linkedin_drafts/latest.md
+          git commit -m "chore: refresh profile and linkedin automation outputs"
+          git push
+
+      - name: Notify on failure (optional webhook)
+        if: failure() && secrets.FAILURE_WEBHOOK_URL != ''
+        run: |
+          curl -sS -X POST "${{ secrets.FAILURE_WEBHOOK_URL }}" \
+            -H 'Content-Type: application/json' \
+            -d '{"text":"Profile automation workflow failed. Review run logs for details."}'
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          {
+            echo "## Profile Automation Run"
+            echo "- Generated README from structured profile + GitHub activity"
+            echo "- Generated LinkedIn draft artifact for human review"
+            echo "- Optional publish workflow requires explicit manual trigger"
+          } >> "$GITHUB_STEP_SUMMARY"

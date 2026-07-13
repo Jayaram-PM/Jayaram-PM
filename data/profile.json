@@ -1,0 +1,39 @@
+{
+  "name": "Jayaram S",
+  "headline": "Project | Program | Portfolio Management Professional",
+  "tagline": "Driving Strategic Execution, Business Transformation, and Technology Delivery",
+  "location": "Malaysia",
+  "email": "itsmeram1985@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/jayaramsreddy",
+  "summary": "Technical Project Manager with a Computer Science foundation and advanced project management training, focused on turning complex technical initiatives into measurable business outcomes.",
+  "skills": [
+    "Quality Management",
+    "Risk Management",
+    "Scrum",
+    "PMO & Governance",
+    "Agile Delivery",
+    "Cross-Functional Leadership",
+    "Digital Transformation"
+  ],
+  "certifications": [
+    "AI for Business Professionals",
+    "PMP® Certification Training Course",
+    "Lean Six Sigma White Belt Certification"
+  ],
+  "education": [
+    "Master’s Degree in Project Management — Asia Pacific University of Technology and Innovation (APU / APIIT), 2024–2025",
+    "Computer Science — Anna University, Chennai"
+  ],
+  "professional_focus": [
+    "Delivering strategic programs with strong governance",
+    "Enabling digital and operational transformation",
+    "Improving portfolio visibility and execution maturity",
+    "Aligning technology initiatives to measurable business outcomes"
+  ],
+  "badges": [
+    "https://img.shields.io/badge/Role-Technical%20Project%20Manager-blue",
+    "https://img.shields.io/badge/Focus-Digital%20Transformation-success",
+    "https://img.shields.io/badge/Methodology-Agile-orange",
+    "https://img.shields.io/badge/PMO-Governance-purple"
+  ]
+}
