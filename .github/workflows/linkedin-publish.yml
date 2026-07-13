@@ -1,0 +1,63 @@
+name: LinkedIn Publish (Manual Approval)
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Set true to publish the latest LinkedIn draft"
+        required: true
+        default: false
+        type: boolean
+      draft_path:
+        description: "Draft file path"
+        required: true
+        default: "linkedin_drafts/latest.md"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish-linkedin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate draft file exists
+        run: |
+          if [ ! -f "${{ inputs.draft_path }}" ]; then
+            echo "Draft file not found: ${{ inputs.draft_path }}"
+            exit 1
+          fi
+
+      - name: Publish only after explicit manual approval
+        run: |
+          if [ "${{ inputs.publish }}" != "true" ]; then
+            echo "Publish input is false. Keeping draft for manual review/posting."
+            exit 0
+          fi
+
+          python scripts/publish_linkedin.py \
+            --draft "${{ inputs.draft_path }}" \
+            --publish
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+
+      - name: Write summary
+        if: always()
+        run: |
+          {
+            echo "## LinkedIn Publish"
+            echo "- Manual workflow dispatch is required"
+            echo "- 'publish=true' is required to attempt API publishing"
+            echo "- Without LinkedIn API secrets, workflow exits safely and keeps draft"
+          } >> "$GITHUB_STEP_SUMMARY"
